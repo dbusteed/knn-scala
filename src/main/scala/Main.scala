@@ -18,7 +18,7 @@ object Main {
     // tuning parameter
     val k = 3
 
-    val fileName = "/home/davis/projects/scala/knn/knn/data/gender.csv"
+    val fileName = "/home/davis/projects/knn-scala/knn/data/gender.csv"
     val lines = Source.fromFile(fileName).getLines().drop(1).toList
 
     val data: List[HealthData] = lines.map { line =>
@@ -48,7 +48,7 @@ object Main {
     // doesn't handle multiple modes yet
     val predictedClass = nearestLabels.groupBy(x => x).view.mapValues(_.size).maxBy(_._2)._1
 
-    println(s"\nPredicted Gender: $predictedClass")
+    println(s"\nPredicted gender: $predictedClass")
 
   } 
 
